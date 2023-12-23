@@ -6,6 +6,8 @@
 ---
 * <a href="Tutorial.md">Tutorial.md</a>
 ---
+#### Mind map
+* <a href="Tutorial.md">EH_2023_part_1.drawio.svg</a>
 
 ---
 ## Device information:
