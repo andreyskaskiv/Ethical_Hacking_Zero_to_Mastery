@@ -28,14 +28,31 @@
   ```shell
   ipconfig /all
   ```
+---
+## Security Metasploitable
+
+```
+Login:password - msfadmin:msfadmin
+
+msfadmin@metasploitable: cd /var/www/dvwa/dvwa/includes/
+msfadmin@metasploitable: sudo nano dvwaPage.inc.php
+
+setcookie( 'security', 'medium' )
+```
+```
+http://10.0.2.4/dvwa/security.php
+
+Username: admin
+Security Level: low
+```
 
 ---
-
 
 ## scripts
 
 1. <a href="#port_scanner">Port Scanner</a>
 2. <a href="#exploits_and_payloads">Exploits and Payloads</a>
+3. <a href="#vulnerability_scanner">Vulnerability Scanner</a>
 
 
 
@@ -88,3 +105,20 @@
    [+] Successful exploitation:  exploit/unix/misc/distcc_exec, Payload: payload/cmd/unix/adduser
    - - - - - - - - - - - - - - - - - - - - 
    ```
+   
+
+---
+
+1. **Vulnerability Scanner** <a name="vulnerability_scanner"></a>
+
+    ```pycon
+    cd 3_vulnerability_scanner
+    ```
+   ```pycon
+   ┌──(kali㉿kali)-[~/PycharmProjects/Complete_EH_Bootcamp_Zero_to_Mastery/3_vulnerability_scanner]
+   └─$ python3 run_scanner.py
+   
+   ```
+   ![run_vulnerability_scanner.gif](animation_gif%2Frun_vulnerability_scanner.gif)
+
+
