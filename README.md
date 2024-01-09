@@ -9,6 +9,8 @@
 #### Mind map
 * <a href="EH_2023_part_1.drawio.svg">EH_2023_part_1.drawio.svg</a>
 * <a href="EH_2023_part_2_DVWA.drawio.svg">EH_2023_part_2_DVWA.drawio.svg</a>
+* <a href="EH_2023_part_3_WIFI.drawio.svg">EH_2023_part_3_WIFI.drawio.svg</a>
+* <a href="EH_2023_part_4_ANDROID.drawio.svg">EH_2023_part_4_ANDROID.drawio.svg</a>
 
 ---
 ## Device information:
